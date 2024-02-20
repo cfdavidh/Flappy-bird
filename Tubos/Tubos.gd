@@ -18,3 +18,9 @@ func _on_tubo_abajo_body_entered(body):
 	for i in pepe:
 		i.show()
 	get_tree().paused = true
+
+
+func _on_area_2d_body_entered(body):
+	var juego_seleccion = get_tree().get_nodes_in_group("juego")
+	for i in juego_seleccion:
+		i.call("subir_puntos")

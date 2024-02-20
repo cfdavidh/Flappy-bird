@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31err"]
 size = Vector2(154, 55)
 
-[node name="Juego" type="Node2D"]
+[node name="Juego" type="Node2D" groups=["juego"]]
 process_mode = 1
 script = ExtResource("1_jq72m")
 tubos = ExtResource("4_5p072")

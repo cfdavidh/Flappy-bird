@@ -8,3 +8,8 @@ func get_axis() -> Vector2:
 	axis.y = - int(Input.is_action_just_pressed("ui_accept"))
 	
 	return axis.normalized()
+
+
+var score = 0 
+var best = 0 
+

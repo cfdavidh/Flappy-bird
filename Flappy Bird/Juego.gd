@@ -1,8 +1,12 @@
 extends Node2D
 
 
-var score
-var best
+func subir_puntos():
+	GLOBAL.score += 1 
+	
+	GLOBAL.best += 1
+
+
 
 func _process(delta):
 	$ParallaxBackground/ParallaxLayer.motion_offset.x -= 0.1
@@ -35,13 +39,15 @@ func _on_area_2d_body_entered(body):
 
 
 
-
-
 func dead():
 	$Hud.show()
 	get_tree().paused = true
 
 func live():
 	$Jugador.velocity.y = 0
+	ARRAYTUBO.tubo_array.clear()
+	var tubos_instancia = get_tree().get_nodes_in_group("GrupoTubo")
+	for i in tubos_instancia:
+		i.queue_free()
 	$Hud.hide()
 

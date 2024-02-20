@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba4fw7ad47dsc"]
+[gd_scene load_steps=6 format=3 uid="uid://ba4fw7ad47dsc"]
 
 [ext_resource type="Texture2D" uid="uid://dle7aehm2fse6" path="res://sprites/Mobile - Flappy Bird - General Sprites.png" id="1_0qobi"]
 [ext_resource type="Script" path="res://Tubos/Tubos.gd" id="1_yy5ab"]
@@ -8,6 +8,9 @@ size = Vector2(22, 201)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wg8d8"]
 size = Vector2(22, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ray21"]
+size = Vector2(20, 45)
 
 [node name="Tubos" type="Node2D" groups=["GrupoTubo"]]
 script = ExtResource("1_yy5ab")
@@ -42,5 +45,12 @@ region_rect = Rect2(302, 0, 26, 135)
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_wg8d8")
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ray21")
+
 [connection signal="body_entered" from="Tubo Arriba" to="." method="_on_tubo_arriba_body_entered"]
 [connection signal="body_entered" from="Tubo Abajo" to="." method="_on_tubo_abajo_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
