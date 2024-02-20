@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba4fw7ad47dsc"]
+
+[ext_resource type="Texture2D" uid="uid://dle7aehm2fse6" path="res://sprites/Mobile - Flappy Bird - General Sprites.png" id="1_0qobi"]
+[ext_resource type="Script" path="res://Tubos/Tubos.gd" id="1_yy5ab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gs1rw"]
+size = Vector2(22, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wg8d8"]
+size = Vector2(22, 201)
+
+[node name="Tubos" type="Node2D" groups=["GrupoTubo"]]
+script = ExtResource("1_yy5ab")
+metadata/_edit_group_ = true
+
+[node name="Tubo Arriba" type="Area2D" parent="."]
+position = Vector2(0, -125)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Tubo Arriba"]
+scale = Vector2(1, 1.5)
+texture = ExtResource("1_0qobi")
+region_enabled = true
+region_rect = Rect2(302, 0, 26, 135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubo Arriba"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_gs1rw")
+
+[node name="Tubo Abajo" type="Area2D" parent="."]
+position = Vector2(0, 125)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Tubo Abajo"]
+rotation = 3.14159
+scale = Vector2(1, 1.5)
+texture = ExtResource("1_0qobi")
+region_enabled = true
+region_rect = Rect2(302, 0, 26, 135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubo Abajo"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wg8d8")
+
+[connection signal="body_entered" from="Tubo Arriba" to="." method="_on_tubo_arriba_body_entered"]
+[connection signal="body_entered" from="Tubo Abajo" to="." method="_on_tubo_abajo_body_entered"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk10l3kvk5gjs"]
+
+[ext_resource type="Script" path="res://Jugador/Jugador.gd" id="1_enlf6"]
+[ext_resource type="Texture2D" uid="uid://dle7aehm2fse6" path="res://sprites/Mobile - Flappy Bird - General Sprites.png" id="2_pa3qf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mr2l"]
+size = Vector2(16, 10)
+
+[node name="Jugador" type="CharacterBody2D"]
+script = ExtResource("1_enlf6")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pa3qf")
+region_enabled = true
+region_rect = Rect2(264, 64, 17, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5mr2l")
