@@ -3,8 +3,10 @@ extends Node2D
 
 func subir_puntos():
 	GLOBAL.score += 1 
-	
-	GLOBAL.best += 1
+	GLOBAL.best += 1 
+	if GLOBAL.best > GLOBAL.score:
+		GLOBAL.best -= 1
+
 
 
 
