@@ -5,10 +5,17 @@ const SPEED = 300.0
 var gravity = 0
 const JUMP = 17000
 
+func _ready():
+	$Sprite2D/AnimationPlayer.play("idle")
+
+
+
 var my_delta
 func _physics_process(delta):
 	my_delta = delta
 	if GLOBAL.graviton_active() != 0:
+		$Sprite2D/AnimationPlayer.play("fly")
+		
 		gravity = 600
 		motion_control()
 

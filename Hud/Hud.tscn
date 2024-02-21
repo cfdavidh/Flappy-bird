@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ck7ad7ieeq6qr"]
 
 [ext_resource type="Script" path="res://Hud/Hud.gd" id="1_knvjo"]
-[ext_resource type="Texture2D" uid="uid://dle7aehm2fse6" path="res://sprites/Mobile - Flappy Bird - General Sprites.png" id="1_scd3r"]
+[ext_resource type="Texture2D" uid="uid://b541ro2bkbubx" path="res://sprites/hud.png" id="2_1eyw2"]
 [ext_resource type="Texture2D" uid="uid://c3ippqwkhpnlm" path="res://sprites/ok.png" id="2_8kbwi"]
 [ext_resource type="Texture2D" uid="uid://cafrd0huvxpli" path="res://sprites/ok3.png" id="3_du5xp"]
 [ext_resource type="Texture2D" uid="uid://b7s83yxgxh4np" path="res://sprites/ok2.png" id="4_p1202"]
@@ -17,10 +17,9 @@ offset_bottom = 194.0
 script = ExtResource("1_knvjo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(68, 92.75)
-scale = Vector2(0.905797, 1.11818)
-texture = ExtResource("1_scd3r")
-region_enabled = true
+position = Vector2(67, 93)
+scale = Vector2(1.15, 1.26667)
+texture = ExtResource("2_1eyw2")
 region_rect = Rect2(219, 59, 39, 55)
 
 [node name="OkButton" type="TextureButton" parent="."]
@@ -36,9 +35,9 @@ texture_hover = ExtResource("4_p1202")
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 74.0
+offset_top = 72.0
 offset_right = 69.0
-offset_bottom = 97.0
+offset_bottom = 95.0
 text = "0"
 
 [node name="Best" type="Label" parent="."]

@@ -1,19 +1,82 @@
-[gd_scene load_steps=4 format=3 uid="uid://bk10l3kvk5gjs"]
+[gd_scene load_steps=8 format=3 uid="uid://bk10l3kvk5gjs"]
 
 [ext_resource type="Script" path="res://Jugador/Jugador.gd" id="1_enlf6"]
-[ext_resource type="Texture2D" uid="uid://dle7aehm2fse6" path="res://sprites/Mobile - Flappy Bird - General Sprites.png" id="2_pa3qf"]
+[ext_resource type="Texture2D" uid="uid://doufrrde1tval" path="res://sprites/el flappy.png" id="2_1aydi"]
+
+[sub_resource type="Animation" id="Animation_msgst"]
+resource_name = "idle"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_22ly2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3knat"]
+resource_name = "fly"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n8d6v"]
+_data = {
+"RESET": SubResource("Animation_22ly2"),
+"fly": SubResource("Animation_3knat"),
+"idle": SubResource("Animation_msgst")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mr2l"]
-size = Vector2(16, 10)
+size = Vector2(14, 10)
 
 [node name="Jugador" type="CharacterBody2D"]
 script = ExtResource("1_enlf6")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_pa3qf")
-region_enabled = true
-region_rect = Rect2(264, 64, 17, 12)
+texture = ExtResource("2_1aydi")
+hframes = 2
+vframes = 2
+region_rect = Rect2(51, 14, 17, 12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_n8d6v")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_5mr2l")
