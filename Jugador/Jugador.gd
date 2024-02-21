@@ -2,13 +2,16 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const gravity = 600
+var gravity = 0
 const JUMP = 17000
 
 var my_delta
 func _physics_process(delta):
 	my_delta = delta
-	motion_control()
+	if GLOBAL.graviton_active() != 0:
+		gravity = 600
+		motion_control()
+
 
 
 func motion_control():

@@ -12,4 +12,5 @@ func _on_ok_button_pressed():
 	get_tree().paused = false
 	$"..".call("live")
 	GLOBAL.score = 0
+	GLOBAL.graviton = 0
 

@@ -11,6 +11,9 @@ func subir_puntos():
 
 
 func _process(delta):
+	
+	
+	
 	$ParallaxBackground/ParallaxLayer.motion_offset.x -= 0.1
 	$ParallaxBackground2/ParallaxLayer.motion_offset.x -= 0.9
 	
@@ -20,14 +23,14 @@ func _process(delta):
 			ARRAYTUBO.tubo_array.pop_front()
 			i.queue_free()
 
-@export var tubos: PackedScene
+
 
 func _ready():
 	$Timer.start(2)
 	$Hud.hide()
 
 
-
+@export var tubos: PackedScene
 func _on_timer_timeout():
 	var tubos_instanciados = tubos.instantiate()
 	$SpawnTubos.add_child(tubos_instanciados)

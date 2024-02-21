@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ck7ad7ieeq6qr" path="res://Hud/Hud.tscn" id="5_aqa2w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31err"]
-size = Vector2(154, 55)
+size = Vector2(195, 55)
 
 [node name="Juego" type="Node2D" groups=["juego"]]
 process_mode = 1
@@ -50,7 +50,7 @@ region_enabled = true
 region_rect = Rect2(146, 0, 154, 56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground2/ParallaxLayer/Area2D"]
-position = Vector2(436, 307)
+position = Vector2(456.5, 307)
 shape = SubResource("RectangleShape2D_31err")
 
 [node name="Hud" parent="." groups=["hud"] instance=ExtResource("5_aqa2w")]

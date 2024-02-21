@@ -15,7 +15,6 @@ offset_top = 25.0
 offset_right = 136.0
 offset_bottom = 194.0
 script = ExtResource("1_knvjo")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(68, 92.75)
@@ -36,17 +35,17 @@ texture_hover = ExtResource("4_p1202")
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
-offset_left = 62.0
+offset_left = 59.0
 offset_top = 74.0
-offset_right = 72.0
+offset_right = 69.0
 offset_bottom = 97.0
 text = "0"
 
 [node name="Best" type="Label" parent="."]
 layout_mode = 0
-offset_left = 62.0
+offset_left = 59.0
 offset_top = 99.0
-offset_right = 88.0
+offset_right = 85.0
 offset_bottom = 122.0
 text = "0"
 
