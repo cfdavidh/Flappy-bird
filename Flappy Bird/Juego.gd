@@ -12,7 +12,8 @@ func subir_puntos():
 
 func _process(delta):
 	
-	
+	if GLOBAL.graviton_active() == 0:
+		$Timer.start(2)
 	
 	$ParallaxBackground/ParallaxLayer.motion_offset.x -= 0.1
 	$ParallaxBackground2/ParallaxLayer.motion_offset.x -= 0.9
@@ -26,7 +27,7 @@ func _process(delta):
 
 
 func _ready():
-	$Timer.start(2)
+	
 	$Hud.hide()
 
 
