@@ -41,11 +41,15 @@ func _on_timer_timeout():
 
 func _on_area_2d_body_entered(body):
 	dead()
-	pass
+	
+
+
 
 
 
 func dead():
+	GLOBAL.graviton = 0 
+	$Golpe.play()
 	$Hud.show()
 	get_tree().paused = true
 

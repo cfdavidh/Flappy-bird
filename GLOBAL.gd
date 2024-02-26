@@ -21,4 +21,3 @@ func graviton_active():
 		graviton += 1 
 	return graviton
  
-

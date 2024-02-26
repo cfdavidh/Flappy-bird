@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba4fw7ad47dsc"]
+[gd_scene load_steps=8 format=3 uid="uid://ba4fw7ad47dsc"]
 
 [ext_resource type="Texture2D" uid="uid://dle7aehm2fse6" path="res://sprites/Mobile - Flappy Bird - General Sprites.png" id="1_0qobi"]
 [ext_resource type="Script" path="res://Tubos/Tubos.gd" id="1_yy5ab"]
+[ext_resource type="AudioStream" uid="uid://bvheypn2nwh3d" path="res://sound/coin.mp3" id="3_t2101"]
+[ext_resource type="AudioStream" uid="uid://c85r816iq26la" path="res://sound/golpe.mp3" id="4_g3i4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gs1rw"]
 size = Vector2(22, 201)
@@ -50,6 +52,15 @@ shape = SubResource("RectangleShape2D_wg8d8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ray21")
+
+[node name="coin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t2101")
+volume_db = -3.759
+
+[node name="golpe" type="AudioStreamPlayer" parent="."]
+process_mode = 4
+stream = ExtResource("4_g3i4b")
+volume_db = -3.759
 
 [connection signal="body_entered" from="Tubo Arriba" to="." method="_on_tubo_arriba_body_entered"]
 [connection signal="body_entered" from="Tubo Abajo" to="." method="_on_tubo_abajo_body_entered"]

@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8b3u33lh2i0w"]
+[gd_scene load_steps=7 format=3 uid="uid://c8b3u33lh2i0w"]
 
 [ext_resource type="Script" path="res://Flappy Bird/Juego.gd" id="1_jq72m"]
 [ext_resource type="Texture2D" uid="uid://dle7aehm2fse6" path="res://sprites/Mobile - Flappy Bird - General Sprites.png" id="1_qfpoc"]
 [ext_resource type="PackedScene" uid="uid://bk10l3kvk5gjs" path="res://Jugador/Jugador.tscn" id="3_bh8kr"]
 [ext_resource type="PackedScene" uid="uid://ba4fw7ad47dsc" path="res://Tubos/Tubos.tscn" id="4_5p072"]
 [ext_resource type="PackedScene" uid="uid://ck7ad7ieeq6qr" path="res://Hud/Hud.tscn" id="5_aqa2w"]
-[ext_resource type="AudioStream" uid="uid://c85r816iq26la" path="res://sound/golpe.mp3" id="6_y1ubo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31err"]
 size = Vector2(195, 55)
@@ -55,11 +54,6 @@ position = Vector2(456.5, 307)
 shape = SubResource("RectangleShape2D_31err")
 
 [node name="Hud" parent="." groups=["hud"] instance=ExtResource("5_aqa2w")]
-
-[node name="Golpe" type="AudioStreamPlayer" parent="."]
-process_mode = 4
-stream = ExtResource("6_y1ubo")
-volume_db = -3.759
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ParallaxBackground2/ParallaxLayer/Area2D" to="." method="_on_area_2d_body_entered"]
