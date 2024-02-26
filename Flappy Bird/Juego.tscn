@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8b3u33lh2i0w"]
+[gd_scene load_steps=9 format=3 uid="uid://c8b3u33lh2i0w"]
 
 [ext_resource type="Script" path="res://Flappy Bird/Juego.gd" id="1_jq72m"]
 [ext_resource type="Texture2D" uid="uid://dle7aehm2fse6" path="res://sprites/Mobile - Flappy Bird - General Sprites.png" id="1_qfpoc"]
+[ext_resource type="PackedScene" uid="uid://dj76ix0xuxa00" path="res://borrar/flash.tscn" id="3_6gjrs"]
 [ext_resource type="PackedScene" uid="uid://bk10l3kvk5gjs" path="res://Jugador/Jugador.tscn" id="3_bh8kr"]
 [ext_resource type="PackedScene" uid="uid://ba4fw7ad47dsc" path="res://Tubos/Tubos.tscn" id="4_5p072"]
 [ext_resource type="PackedScene" uid="uid://ck7ad7ieeq6qr" path="res://Hud/Hud.tscn" id="5_aqa2w"]
@@ -14,6 +15,7 @@ size = Vector2(195, 55)
 process_mode = 1
 script = ExtResource("1_jq72m")
 tubos = ExtResource("4_5p072")
+flash_scene = ExtResource("3_6gjrs")
 
 [node name="Jugador" parent="." instance=ExtResource("3_bh8kr")]
 position = Vector2(34, 70)
@@ -57,7 +59,7 @@ shape = SubResource("RectangleShape2D_31err")
 [node name="Hud" parent="." groups=["hud"] instance=ExtResource("5_aqa2w")]
 
 [node name="Golpe" type="AudioStreamPlayer" parent="."]
-process_mode = 4
+process_mode = 3
 stream = ExtResource("6_y1ubo")
 volume_db = -3.759
 

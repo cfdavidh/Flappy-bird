@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ba4fw7ad47dsc"]
+[gd_scene load_steps=9 format=3 uid="uid://ba4fw7ad47dsc"]
 
 [ext_resource type="Texture2D" uid="uid://dle7aehm2fse6" path="res://sprites/Mobile - Flappy Bird - General Sprites.png" id="1_0qobi"]
 [ext_resource type="Script" path="res://Tubos/Tubos.gd" id="1_yy5ab"]
+[ext_resource type="PackedScene" uid="uid://dj76ix0xuxa00" path="res://borrar/flash.tscn" id="2_5387g"]
 [ext_resource type="AudioStream" uid="uid://bvheypn2nwh3d" path="res://sound/coin.mp3" id="3_t2101"]
 [ext_resource type="AudioStream" uid="uid://c85r816iq26la" path="res://sound/golpe.mp3" id="4_g3i4b"]
 
@@ -16,6 +17,7 @@ size = Vector2(20, 45)
 
 [node name="Tubos" type="Node2D" groups=["GrupoTubo"]]
 script = ExtResource("1_yy5ab")
+flash_scene = ExtResource("2_5387g")
 metadata/_edit_group_ = true
 
 [node name="Tubo Arriba" type="Area2D" parent="."]

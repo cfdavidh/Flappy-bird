@@ -1,6 +1,7 @@
 extends Control
 
 
+
 func _process(delta):
 	$Score.text = str(GLOBAL.score)
 	$Best.text = str(GLOBAL.best)

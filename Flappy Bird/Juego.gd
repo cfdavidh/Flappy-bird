@@ -46,12 +46,14 @@ func _on_area_2d_body_entered(body):
 
 
 
-
+@export var flash_scene : PackedScene
 func dead():
+	var flash = flash_scene.instantiate()
+	add_child(flash)
 	GLOBAL.graviton = 0 
 	$Golpe.play()
 	$Hud.show()
-	get_tree().paused = true
+	
 
 func live():
 	$Jugador.velocity.y = 0

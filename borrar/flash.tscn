@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj76ix0xuxa00"]
+
+[ext_resource type="Script" path="res://borrar/Flash.gd" id="1_6kkb8"]
+
+[node name="Flash" type="ColorRect"]
+process_mode = 3
+offset_left = -302.0
+offset_top = -219.0
+offset_right = 376.0
+offset_bottom = 521.0
+script = ExtResource("1_6kkb8")
